@@ -1,0 +1,446 @@
+/* =======================================================
+   QUANTUM-AI HOLOGRAPHIC INTERFACE v2.0
+   Glassmorphism + 3D Effects + Neural Design
+======================================================= */
+
+.root {
+    -fx-background-color: #05080a;
+    -fx-font-family: 'Segoe UI', 'Inter', sans-serif;
+}
+
+/* =======================================================
+   GLASSMORPHISM FRAMEWORK
+======================================================= */
+
+.glass-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 16px;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-width: 1px;
+    -fx-border-radius: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 240, 255, 0.15), 25, 0.5, 0, 0);
+}
+
+.glass-panel-dark {
+    -fx-background-color: rgba(13, 20, 26, 0.7);
+    -fx-background-radius: 12px;
+    -fx-border-color: rgba(0, 240, 255, 0.2);
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(123, 44, 191, 0.2), 20, 0.5, 0, 0);
+}
+
+.holographic {
+    -fx-background-color: linear-gradient(135deg, 
+        rgba(0, 240, 255, 0.1) 0%,
+        rgba(123, 44, 191, 0.05) 50%,
+        rgba(0, 255, 102, 0.1) 100%);
+    -fx-background-radius: 20px;
+    -fx-border-color: transparent;
+}
+
+.neural-glow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 240, 255, 0.6), 15, 0.8, 0, 0),
+                dropshadow(three-pass-box, rgba(123, 44, 191, 0.4), 25, 0.5, 0, 0);
+}
+
+/* =======================================================
+   3D TRANSFORMATIONS
+======================================================= */
+
+.process-3d {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 12px;
+    -fx-border-color: rgba(0, 240, 255, 0.3);
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 240, 255, 0.3), 20, 0.8, 0, 0);
+}
+
+.process-3d:hover {
+    -fx-background-color: rgba(0, 240, 255, 0.15);
+    -fx-border-color: rgba(0, 240, 255, 0.8);
+}
+
+.floating-element {
+    -fx-animation: float 6s ease-in-out infinite;
+}
+
+/* =======================================================
+   ENHANCED LAYOUT & PANELS
+======================================================= */
+
+.split-pane {
+    -fx-background-color: transparent;
+}
+
+.split-pane *.split-pane-divider {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-padding: 0 1 0 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 240, 255, 0.2), 5, 0.5, 0, 0);
+}
+
+.panel-bg {
+    -fx-background-color: rgba(13, 20, 26, 0.6);
+    -fx-background-radius: 16px;
+    -fx-border-color: rgba(0, 240, 255, 0.15);
+    -fx-border-width: 1px;
+    -fx-border-radius: 16px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 20, 0.5, 0, 0);
+}
+
+.header-label {
+    -fx-text-fill: #00f0ff;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 240, 255, 0.5), 8, 0.8, 0, 0);
+}
+
+/* --- The Process Table --- */
+
+.table-view {
+    -fx-background-color: #141f27;
+    -fx-border-color: #26404f;
+}
+.table-view .column-header-background {
+    -fx-background-color: #1a2a35;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: #26404f;
+    -fx-border-width: 0 1px 1px 0;
+}
+.table-view .column-header .label {
+    -fx-text-fill: #68919e;
+    -fx-font-weight: bold;
+}
+.table-row-cell {
+    -fx-background-color: #141f27;
+    -fx-table-cell-border-color: #1e303d;
+}
+.table-row-cell:odd {
+    -fx-background-color: #101920; /* Subtle striping */
+}
+.table-cell {
+    -fx-text-fill: #cfdadd; /* Light grey/blue text */
+}
+.table-row-cell:selected {
+    -fx-background-color: #1d4e56; /* Teal selection highlight */
+    -fx-table-cell-border-color: #00f0ff;
+}
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #ffffff;
+}
+
+/* --- Filled Area Charts --- */
+
+.chart-title {
+    -fx-text-fill: #9bc5cf;
+    -fx-font-size: 13px;
+}
+.chart-plot-background {
+    -fx-background-color: #0f171d; /* Darkest background for the graph area */
+    -fx-border-color: #26404f;
+}
+/* Dotted, subtle grid lines like the reference image */
+.chart-vertical-grid-lines, .chart-horizontal-grid-lines {
+    -fx-stroke: #26404f;
+    -fx-stroke-width: 1px;
+    -fx-stroke-dash-array: 2 4; 
+}
+.axis {
+    -fx-tick-label-fill: #557782;
+}
+.axis-label {
+    -fx-text-fill: #557782;
+}
+/* The Glowing Line */
+.default-color0.chart-series-line {
+    -fx-stroke: #00f0ff; /* Pure cyan */
+    -fx-stroke-width: 2px;
+}
+/* The Gradient Fill UNDER the line */
+.default-color0.chart-series-area-fill {
+    -fx-fill: linear-gradient(to bottom, rgba(0, 240, 255, 0.5) 0%, rgba(0, 240, 255, 0.0) 100%);
+}
+.default-color0.chart-series-area-line {
+    -fx-stroke: #00f0ff;
+    -fx-stroke-width: 2px;
+}
+.default-color1.chart-series-area-fill {
+    -fx-fill: linear-gradient(to bottom, rgba(255, 85, 0, 0.5) 0%, rgba(255, 85, 0, 0.0) 100%);
+}
+.default-color1.chart-series-area-line {
+    -fx-stroke: #ff5500;
+    -fx-stroke-width: 2px;
+}
+.chart-legend {
+    -fx-background-color: transparent;
+}
+.chart-legend-item {
+    -fx-text-fill: #9bc5cf;
+}
+
+/* --- Smart Search Bar --- */
+
+.search-box {
+    -fx-background-color: #0a1014;
+    -fx-text-fill: #00f0ff;
+    -fx-border-color: #26404f;
+    -fx-border-width: 1px;
+    -fx-padding: 6px;
+    -fx-prompt-text-fill: #3b5a68;
+}
+.search-box:focused {
+    -fx-border-color: #00f0ff; /* Glows cyan when you click it */
+}
+
+/* --- Context Menu (The Kill Switch) --- */
+
+.context-menu {
+    -fx-background-color: #0d141a;
+    -fx-border-color: #ff003c; /* Cyberpunk Red border */
+    -fx-border-width: 1px;
+    -fx-padding: 4px;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 0, 60, 0.4), 10, 0, 0, 0);
+}
+.menu-item {
+    -fx-background-color: transparent;
+    -fx-padding: 5px 10px 5px 10px;
+}
+.menu-item .label {
+    -fx-text-fill: #ff4d4d; /* Bright red text */
+    -fx-font-weight: bold;
+}
+.menu-item:focused {
+    -fx-background-color: #4a0000; /* Deep red background on hover */
+}
+.menu-item:focused .label {
+    -fx-text-fill: #ffffff; /* Text turns white when hovered */
+}
+
+/* --- Top Navigation Tabs --- */
+
+.tab-pane {
+    -fx-background-color: #0d141a;
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #080c10; /* Darkest bar at the top */
+    -fx-border-color: #1e303d;
+    -fx-border-width: 0 0 1px 0;
+}
+.tab-pane .tab {
+    -fx-background-color: #0d141a;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 5px 15px;
+    -fx-border-color: transparent transparent transparent;
+}
+.tab-pane .tab:selected {
+    -fx-background-color: #141f27;
+    -fx-border-color: #00f0ff transparent transparent transparent; /* Cyan top border for active tab */
+    -fx-border-width: 2px 0 0 0;
+}
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #68919e;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #00f0ff; /* Glowing cyan text for active tab */
+}
+.tab-pane .tab:hover {
+    -fx-background-color: #1a2a35;
+}
+
+/* --- Heuristic AI Optimizer --- */
+
+.ai-console {
+    -fx-control-inner-background: #05080a;
+    -fx-text-fill: #00ff66; /* Matrix Green */
+    -fx-font-family: 'Ubuntu Monospace', 'Courier New', monospace;
+    -fx-font-size: 14px;
+    -fx-border-color: #26404f;
+    -fx-padding: 10px;
+}
+.ai-console .content {
+    -fx-background-color: #05080a;
+}
+.ai-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ff003c;
+    -fx-border-color: #ff003c;
+    -fx-border-width: 2px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 0, 60, 0.4), 10, 0, 0, 0);
+}
+.ai-button:hover {
+    -fx-background-color: #ff003c;
+    -fx-text-fill: #ffffff;
+}
+
+/* --- AI Chatbot Interface --- */
+
+.chat-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+.chat-scroll-pane .viewport {
+    -fx-background-color: #05080a;
+}
+.bot-message-box {
+    -fx-background-color: #0d1a20;
+    -fx-border-color: #00f0ff;
+    -fx-border-width: 0 0 0 3px;
+    -fx-padding: 15px;
+    -fx-background-radius: 0 5px 5px 0;
+}
+.bot-text {
+    -fx-fill: #a0c4d6;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+.bot-highlight {
+    -fx-fill: #00ff66;
+    -fx-font-weight: bold;
+}
+.user-message-box {
+    -fx-background-color: #1a1014;
+    -fx-border-color: #ff003c;
+    -fx-border-width: 0 3px 0 0;
+    -fx-padding: 10px 15px;
+    -fx-background-radius: 5px 0 0 5px;
+}
+.action-btn-kill {
+    -fx-background-color: transparent;
+    -fx-border-color: #ff003c;
+    -fx-text-fill: #ff003c;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+.action-btn-kill:hover {
+    -fx-background-color: #ff003c;
+    -fx-text-fill: white;
+}
+.action-btn-ignore {
+    -fx-background-color: transparent;
+    -fx-border-color: #557782;
+    -fx-text-fill: #557782;
+    -fx-cursor: hand;
+}
+.action-btn-ignore:hover {
+    -fx-background-color: #557782;
+    -fx-text-fill: white;
+}
+
+/* --- Futuristic GPU Dashboard --- */
+
+.gpu-grid {
+    -fx-hgap: 25;
+    -fx-vgap: 25;
+    -fx-padding: 30;
+    -fx-alignment: center;
+}
+.gpu-card {
+    -fx-background-color: linear-gradient(to bottom right, #0d1a20, #05080a);
+    -fx-border-color: #7b2cbf; /* Neon Purple Accent */
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(123, 44, 191, 0.4), 20, 0, 0, 0);
+}
+.gpu-card-title {
+    -fx-text-fill: #00f0ff; /* Neon Blue */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-padding: 0 0 10 0;
+}
+.gpu-card-value {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+.gpu-card-subtext {
+    -fx-text-fill: #557782;
+    -fx-font-size: 12px;
+}
+/* Custom VRAM Progress Bar */
+.gpu-vram-bar {
+    -fx-pref-height: 15px;
+}
+.gpu-vram-bar .bar {
+    -fx-background-color: linear-gradient(to right, #00f0ff, #7b2cbf);
+    -fx-background-radius: 5px;
+}
+.gpu-vram-bar .track {
+    -fx-background-color: #000000;
+    -fx-border-color: #26404f;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+/* =======================================================
+   ISOLATED ULTRA-FORGE GPU DASHBOARD STYLES
+======================================================= */
+
+.uf-card {
+    -fx-background-color: #0a1218;
+    -fx-border-color: #15303f;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 15px;
+}
+.uf-card-glow {
+    -fx-background-color: #0a1218;
+    -fx-border-color: #00f0ff;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(two-pass-box, rgba(0, 240, 255, 0.25), 15, 0, 0, 0);
+}
+.uf-title {
+    -fx-text-fill: #a0c4d6;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}
+.uf-value-large {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+.uf-value-accent {
+    -fx-text-fill: #00ff66;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Courier New', monospace;
+}
+
+/* Glowing Progress Bar */
+.uf-gauge .track {
+    -fx-background-color: #05090c;
+    -fx-border-color: #15303f;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+.uf-gauge .bar {
+    -fx-background-color: linear-gradient(to right, #00f0ff, #7b2cbf);
+    -fx-background-radius: 10px;
+    -fx-padding: 5px;
+}
+
+/* Isolated GPU Charts (Transparent Backgrounds) */
+.gpu-chart .chart-plot-background { -fx-background-color: transparent; -fx-border-color: transparent; }
+.gpu-chart .chart-vertical-grid-lines, .gpu-chart .chart-horizontal-grid-lines {
+    -fx-stroke: #15303f;
+    -fx-stroke-dash-array: 2 4;
+}
+.gpu-chart .axis { -fx-tick-label-fill: transparent; }
+.gpu-chart .axis-tick-mark, .gpu-chart .axis-minor-tick-mark { -fx-stroke: transparent; }

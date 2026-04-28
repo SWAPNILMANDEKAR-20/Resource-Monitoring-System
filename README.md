@@ -54,11 +54,17 @@ Tech Stack
 
  Project Structure
 ├── SystemMonitor.java # Main JavaFX application
+
 ├── SystemMonitorFixed.java # Simplified working version
+
 ├── TestApp.java # Basic test UI
+
 ├── monitor.c # Native C implementation (JNI)
+
 ├── SystemMonitor.h # JNI header
+
 ├── style.css # UI styling
+
 ├── dxgi.h # GPU interface definitions
 
 
